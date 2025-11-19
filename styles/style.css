@@ -117,7 +117,7 @@ main.apresentacao {
 
 .apresentacao__conteudo__titulo {
     color: var(--cor-secundaria);
-    font-size: 2.25rem;
+    font-size: 1.8rem;
     font-family: var(--fonte-primaria);
 }
 
