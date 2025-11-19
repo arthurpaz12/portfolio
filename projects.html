@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfólio</title>
         <link rel="stylesheet" href="./styles/style.css" >
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     </head>
 
     <body>
@@ -25,9 +25,94 @@
         </header>
 
         <main class="apresentacao">
-            <section class="apresentacao__conteudo">
-                <h1 class="apresentacao__conteudo__titulo">Meus Projetos</h1>
-                <p class="apresentacao__conteudo__texto">Em breve, aqui estarão os projetos que demonstram minhas habilidades. Volte logo!</p>
+            <section class="apresentacao__conteudo projetos">
+                <h1 class="apresentacao__conteudo__titulo"><strong class="titulo-destaque">Meus Projetos</strong></h1>
+                <p class="apresentacao__conteudo__texto">Da lógica de banco de dados ao design de interfaces.</p>
+
+                <div class="projetos__container">
+
+                    <article class="projeto__card">
+                        <div class="projeto__imagem">
+                            <img src="./assets/Gerenciador_de_links.png" alt="Print do Gerenciador de Links">
+                        </div>
+                        <div class="projeto__info">
+                            <h3>Gerenciador de Links</h3>
+                            <p>Sistema CRUD para organizar favoritos. Permite criar, listar, atualizar e deletar registros.</p>
+                            
+                            <div class="projeto__techs">
+                                <span>PHP</span> 
+                                <span>MySQL</span>
+                                <span>MVC</span>
+                            </div>
+
+                            <div class="projeto__links">
+                                <a href="https://github.com/arthurpaz12/PHP-crud-gerenciador-links" target="_blank" class="btn__projeto">
+                                    <span class="material-symbols-outlined">code</span> Repositório
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="projeto__card">
+                        <div class="projeto__imagem">
+                            <img src="./assets/Buscador_de_filmes.png" alt="Print do Buscador de Filmes">
+                        </div>
+                        <div class="projeto__info">
+                            <h3>Buscador de Filmes</h3>
+                            <p>Aplicação interativa que consome uma API externa para exibir cartazes e sinopses de filmes.</p>
+                            
+                            <div class="projeto__techs">
+                                <span>JavaScript</span>
+                                <span>API Rest</span>
+                                <span>HTML/CSS</span>
+                            </div>
+
+                            <div class="projeto__links">
+                                <a href="https://github.com/arthurpaz12/Buscador-de-filmes" target="_blank" class="btn__projeto">
+                                    <span class="material-symbols-outlined">code</span> Repositório
+                                </a>
+                                <a href="https://buscador-de-filmes-xi.vercel.app/" target="_blank" class="btn__projeto destaque">
+                                    <span class="material-symbols-outlined">visibility</span> Ver Site
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="projeto__card">
+                        <div class="projeto__imagem">
+                            <img src="./assets/portfolio.png" alt="Print do Portfólio">
+                        </div>
+                        <div class="projeto__info">
+                            <h3>Portfólio Pessoal</h3>
+                            <p>Este site! Desenvolvido com foco em responsividade, organização de código e boas práticas.</p>
+                            
+                            <div class="projeto__techs">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>Flexbox/Grid</span>
+                            </div>
+
+                            <div class="projeto__links">
+                                <a href="https://github.com/arthurpaz12/portfolio" target="_blank" class="btn__projeto">
+                                    <span class="material-symbols-outlined">code</span> Ver Repositório
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="projeto__card em-breve">
+                        <div class="projeto__info">
+                            <span class="material-symbols-outlined icone-grande">construction</span>
+                            <h3>Em desenvolvimento</h3>
+                            <p>Um novo projeto Full Stack está sendo codado neste momento. Aguarde novidades!</p>
+                            
+                            <div class="projeto__techs">
+                                <span>Loading...</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
             </section>
         </main>
 
