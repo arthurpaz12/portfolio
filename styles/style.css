@@ -9,9 +9,18 @@
     --fonte-secundaria: "Montserrat", sans-serif;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; 
 }
 
 .cabecalho {
@@ -38,11 +47,11 @@
     text-decoration: none;
 }
 
-
 .cabecalho__menu__link:hover {
     background-color: var(--cor-terciaria);
     color: var(--cor-primaria);
 }
+
 .search {
     display: flex;
     align-items: center;
@@ -54,7 +63,6 @@
     padding: 0.5rem 0.75rem;
     color: var(--cor-terciaria);
 }
-
 
 #searchInput {
     padding: 0.5rem;
@@ -77,7 +85,6 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    box-sizing: border-box;
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
 }
@@ -97,10 +104,15 @@ main.apresentacao {
 
 .apresentacao__conteudo {
     width: 50%;
-    /* height: 482px; */
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+}
+
+
+.apresentacao__conteudo.certificados {
+    width: 100%; 
+    align-items: normal; 
 }
 
 .apresentacao__conteudo__titulo {
@@ -109,7 +121,7 @@ main.apresentacao {
     font-family: var(--fonte-primaria);
 }
 
-.titulo-destaque{
+.titulo-destaque {
     color: var(--cor-terciaria);
 }
 
@@ -162,7 +174,7 @@ main.apresentacao {
 }
 
 .rodape {
-    color:var(--cor-primaria);
+    color: var(--cor-primaria);
     background-color: var(--cor-terciaria);
     display: block;
     justify-content: center;
@@ -173,60 +185,93 @@ main.apresentacao {
     font-weight: 400;
 }
 
-.certificados {
-    align-items: center;
-}
+
 
 .certificados__container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    margin-top: 1rem;
 }
 
 .certificado__link {
     text-decoration: none;
     color: inherit;
+    height: 100%;
 }
 
 .certificado__card {
     background-color: var(--cor-hover);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .certificado__card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10ps 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: var(--cor-terciaria);
 }
 
-.certificado__card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+.card__icon {
+    margin-bottom: 1rem;
+}
+
+.card__icon .material-symbols-outlined {
+    font-size: 3rem;
+    color: var(--cor-terciaria);
 }
 
 .certificado__card__info h3 {
     font-family: var(--fonte-primaria);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: var(--cor-secundaria);
     margin: 0 0 0.5rem 0;
+    line-height: 1.4;
 }
 
-.certificado__card__info p {
+.certificado__card__info p, 
+.certificado__card__info .instituicao,
+.certificado__card__info .desc_techs {
     font-family: var(--fonte-secundaria);
-    font-size: 1rem;
-    color: var(--cor-terciaria);
+    font-size: 0.9rem;
+    color: var(--cor-secundaria);
+    opacity: 0.8; 
     margin: 0;
+    display: block;
 }
+
+.certificado__card__info .desc_techs {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--cor-terciaria);
+}
+
+.card__action {
+    align-self: flex-end;
+    margin-top: 1.5rem;
+}
+
+.card__action .material-symbols-outlined {
+    font-size: 1.5rem;
+    color: var(--cor-secundaria);
+    transition: color 0.3s;
+}
+
+.certificado__card:hover .card__action .material-symbols-outlined {
+    color: var(--cor-terciaria);
+}
+
 
 @media (max-width: 1330px) {
     .cabecalho {
-        padding: 6%;  
+        padding: 6%;
     }
 
     .cabecalho__menu {
@@ -236,17 +281,21 @@ main.apresentacao {
     }
 
     .apresentacao {
-        flex-direction: column-reverse;
+        flex-direction: column-reverse; 
         padding: 5%;
     }
 
+
+    .apresentacao:has(.certificados) {
+        flex-direction: column;
+    }
+
     .apresentacao__conteudo {
-        width: auto;
+        width: 100%; 
     }
 
     .apresentacao__imagem {
         width: 90%;
         height: auto;
-        
     }
 }
